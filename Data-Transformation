@@ -1,0 +1,49 @@
+
+
+import pandas as pd
+
+#group by
+data = {
+           'Name' : ['Prasad','Pooja','Nikita'],
+           'Age' : [22,20,23],
+           'Country' : ['India','America','Brazil']
+}
+
+df = pd.DataFrame(data)
+groupedData = df.groupby(['Country']) 
+print(groupedData['Age'].mean())
+
+
+
+#Merging and Joining
+data1 = { 'Name' : ['Prasad','Pooja','Nikita'],
+           'Age' : [22,20,23],}
+
+data2 = {'Name' : ['Prasad','Pooja','Nikita'],
+          'Color' : ['Red','Blue','White']
+        }
+
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
+
+mergedData = pd.merge(df1,df2,on ='Name')
+print(mergedData)
+
+
+
+#Concatenation : 
+data1 = {  'Name' : ['Prasad','Pooja'],
+           'Age' : [24,20]}
+
+data2 = {  'Name' : ['Rushi','Nikita'],
+           'Age' : [21,22]}
+
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
+
+ConcatenatedData = pd.concat([df1,df2],axis = 0) # concate horizonatally thats why axis is 0
+print(ConcatenatedData)
+
+
+
+
